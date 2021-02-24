@@ -11,14 +11,13 @@ export default function MoreStories({ apods }) {
       </Typography>
             <Grid container spacing={10} justify="space-around" alignItems="baseline" style={{ paddingTop: "2.2vmax", paddingBottom: "5.5vmax" }}>
                 {apods.map((apod) => (
-                    <Grid item xs={12} sm={6}>
+                    <Grid item xs={12} sm={6} key={apod.date}>
                         <ApodPreview
                             key={apod.date}
                             title={apod.title}
                             coverImage={apod.url}
                             date={apod.date}
                             slug={apod.date}
-                            excerpt={apod.HERO_TEXT}
                         />
                     </Grid>
                 ))}

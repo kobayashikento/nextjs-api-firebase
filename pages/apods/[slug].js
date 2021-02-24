@@ -11,13 +11,13 @@ import { getAllAPODForHome, getAPODAndMoreAPODs } from '../../lib/api';
 import Head from 'next/head';
 import { Divider } from '@material-ui/core';
 
-export default function Apod({ apod, moreAPODs, preview }) {
+export default function Apod({ apod, moreAPODs }) {
     const router = useRouter()
-    // if (!router.isFallback) {
-    //     return <ErrorPage statusCode={404} />
-    // }
+    if (!router.isFallback && !apod) {
+        return <ErrorPage statusCode={404} />
+    }
     return (
-        <Layout preview={preview}>
+        <Layout>
             <Container>
                 <Header />
                 {router.isFallback ? (
@@ -29,7 +29,6 @@ export default function Apod({ apod, moreAPODs, preview }) {
                                     <title>
                                         {apod.title}
                                     </title>
-                                    {/* <meta property="og:image" content={post.featured_image} /> */}
                                 </Head>
                                 <ApodHeader
                                     title={apod.title}
@@ -48,7 +47,7 @@ export default function Apod({ apod, moreAPODs, preview }) {
 }
 
 export async function getStaticProps({ params, preview = null }) {
-    const { apod, moreAPODs } = await getAPODAndMoreAPODs(params.slug, preview)
+    const { apod, moreAPODs } = await getAPODAndMoreAPODs(params.slug)
 
     return {
         props: {
@@ -62,7 +61,7 @@ export async function getStaticProps({ params, preview = null }) {
 export async function getStaticPaths() {
     const allPosts = await getAllAPODForHome()
     return {
-        paths: allPosts?.map((apod) => `/posts/${apod.slug}`) || [],
+        paths: allPosts?.map((apod) => `/apods/${apod.slug}`) || [],
         fallback: true,
     }
 }

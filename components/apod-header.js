@@ -8,11 +8,11 @@ export default function ApodHeader({ title, coverImage, date }) {
     return (
         <>
             <ApodTitle>{title}</ApodTitle>
-            <Typography variant="h6" style={{ paddingTop: "1.1vmax" }}>
+            <Typography variant="h6">
                 Published on: <Date dateString={date} />
             </Typography>
             <div style={{ paddingTop: "3.3vmax" }}>
-                <CoverImage title={title} url={coverImage} />
+                <CoverImage title={title} url={coverImage} focus={true}/>
             </div>
         </>
     )

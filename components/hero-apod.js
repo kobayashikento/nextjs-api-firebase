@@ -24,8 +24,8 @@ export default function HeroAPOD({
                             <a>{title}</a>
                         </Link>
                     </Typography>
-                    <Typography variant="body1" style={{ paddingTop: "1.1vmax" }}>
-                        <Date dateString={date} />
+                    <Typography variant="body1" style={{ paddingTop: "1.1vmax"}}>
+                        Published on: <Date dateString={date} />
                     </Typography>
                 </Grid>
                 <Grid item xs={12} sm={6}>

@@ -14,17 +14,17 @@ export default function PostPreview({
     return (
         <div>
             <CoverImage title={title} url={coverImage} slug={date} preview={true} />
-            <Typography className="underlineHover" variant="h4" style={{ paddingTop: "1.1vmax" }}>
+            <Typography className="underlineHover" variant="h4" style={{ paddingTop: "1.1vmax", paddingBottom: "1rem" }}>
                 <Link as={`/apods/${date}`} href="/apods/[slug]">
                     <a
                         dangerouslySetInnerHTML={{ __html: title }}
                     ></a>
                 </Link>
             </Typography>
-            <Typography variant="h6">
+            <Typography variant="body1">
                 <Date dateString={date} />
             </Typography>
-            <Typography style={{paddingTop: "1.1vmax"}} dangerouslySetInnerHTML={{ __html: HERO_TEXT }} />
+            <Typography style={{ paddingTop: "1.1vmax" }} dangerouslySetInnerHTML={{ __html: HERO_TEXT }} />
         </div>
     )
 }

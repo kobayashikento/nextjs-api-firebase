@@ -1,5 +1,4 @@
 import { Typography } from "@material-ui/core";
-import cn from 'classnames';
 
 export default function Alert() {
     return (
