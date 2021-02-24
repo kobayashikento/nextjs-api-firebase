@@ -13,8 +13,9 @@ Key points
       ( 5 hours )
   2) Connect Firebase to NextJS 
       ( 3 hours )
-  3) Use https://api.nasa.gov/index.html to populate the endless application -> use react state to keep position of the days from today and gradually decrease the days until the api returns null, then reset the state to today.
-  4) Populate pages js     
+  3) Use https://api.nasa.gov/index.html to populate the endless application -> 
+     use the count query to get randomized content or use react state to keep position of the days from today and gradually decrease the days until the api returns null, then reset the state to today.
+  5) Populate pages js     
       
       a) Re-read about getStaticPaths and getStaticProps and implement some kind of SSR or pre-rendering 
       ( 5 hours )
