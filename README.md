@@ -11,9 +11,10 @@ Key points
  Steps.
   1) Quickly make a mockup design that consists of the 1) landing page and 2) content page which will be recycled and filled with the contents of the API request
       ( 5 hours )
-  2) Connect Firebase to NextJS and create appropriate entries that will be used for the API calls 
+  2) Connect Firebase to NextJS 
       ( 3 hours )
-  3) Populate pages js     
+  3) Use https://api.nasa.gov/index.html to populate the endless application -> use react state to keep position of the days from today and gradually decrease the days until the api returns null, then reset the state to today.
+  4) Populate pages js     
       
       a) Re-read about getStaticPaths and getStaticProps and implement some kind of SSR or pre-rendering 
       ( 5 hours )
