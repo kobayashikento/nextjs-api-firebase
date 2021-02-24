@@ -13,6 +13,7 @@ Key points
       5 hours 
   2) Connect Firebase to NextJS and create appropriate entries that will be used for the API calls 
       3 hours
-  3) Populate pages js 
-    a) Re-read about getStaticPaths and getStaticProps and implement some kind of SSR or pre-rendering 
+  3) Populate pages js     
+      
+      a) Re-read about getStaticPaths and getStaticProps and implement some kind of SSR or pre-rendering 
       5 hours
