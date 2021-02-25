@@ -12,10 +12,13 @@ import Head from 'next/head';
 import { Divider } from '@material-ui/core';
 
 export default function Apod({ apod, moreAPODs }) {
+
     const router = useRouter()
+
     if (!router.isFallback && !apod) {
         return <ErrorPage statusCode={404} />
     }
+
     return (
         <Layout>
             <Container>
