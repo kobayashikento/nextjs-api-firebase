@@ -14,11 +14,11 @@ export default function CoverImage({ title, url, slug, preview, focus }) {
             {slug ? (
                 <Link as={`/apods/${slug}`} href="/apods/[slug]">
                     <a aria-label={title} style={{ width: "100%" }}>
-                        <div className={!focus ? "imageHover" : "imageNonHover"} style={{ backgroundImage: tempUrl, width: "100%", height: preview ? "50vh" : "70vh" }} />
+                        <div className={!focus ? "imageHover" : "imageNonHover"} style={{ backgroundImage: tempUrl, width: "100%", height: preview ? "40vh" : "70vh" }} />
                     </a>
                 </Link>
             ) : (
-                    <div className={!focus ? "imageHover" : "imageNonHover"} style={{ backgroundImage: tempUrl, width: "100%", height: preview ? "50vh" : "70vh" }} />
+                    <div className={!focus ? "imageHover" : "imageNonHover"} style={{ backgroundImage: tempUrl, width: "100%", height: preview ? "40vh" : "70vh" }} />
                 )}
         </div>
     )

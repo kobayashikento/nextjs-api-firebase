@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Typography } from '@material-ui/core';
+import { Typography, Grid } from '@material-ui/core';
 import ApodPreview from './apod-preview';
 
 import InfiniteScroll from "react-infinite-scroll-component";
@@ -29,16 +29,20 @@ export default function MoreStories({ apods }) {
                     loader={<Typography>Loading...</Typography>}
                     style={{ overflow: "none" }}
                 >
-                    {items.map((apod) => (
-                        <ApodPreview
-                            key={apod.date}
-                            title={apod.title}
-                            coverImage={apod.url}
-                            date={apod.date}
-                            slug={apod.date}
-                            explanation={apod.explanation}
-                        />
-                    ))}
+                    <Grid container spacing={7}>
+                        {items.map((apod) => (
+                            <Grid item xs={12} sm={4}>
+                                <ApodPreview
+                                    key={apod.date}
+                                    title={apod.title}
+                                    coverImage={apod.url}
+                                    date={apod.date}
+                                    slug={apod.date}
+                                    explanation={apod.explanation}
+                                />
+                            </Grid>
+                        ))}
+                    </Grid>
                 </InfiniteScroll>
             </div>
         </section >

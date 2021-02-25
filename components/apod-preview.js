@@ -3,7 +3,7 @@ import CoverImage from './cover-image';
 import Link from 'next/link';
 
 import { HERO_TEXT } from '../lib/constants';
-import { Typography, Grid } from '@material-ui/core';
+import { Typography, CardActionArea, Card, CardContent, CardActions, Button } from '@material-ui/core';
 
 export default function PostPreview({
     title,
@@ -11,26 +11,30 @@ export default function PostPreview({
     date,
     explanation,
 }) {
-    let firstFive = explanation.split('\.')[0] + explanation.split('\.')[1] + "...";
+    let firstTwo = explanation.split('\.')[0] + explanation.split('\.')[1] + "...";
 
     return (
-        <Grid container justify="space-between" alignItems="center" style={{ paddingTop: "4%", paddingBottom: "4%" }}>
-            <Grid item xs={12} sm={4}>
-                <Typography className="underlineHover" variant="h4" style={{ paddingTop: "1.1vmax", paddingBottom: "1rem" }}>
-                    <Link as={`/apods/${date}`} href="/apods/[slug]">
-                        <a
-                            dangerouslySetInnerHTML={{ __html: title }}
-                        ></a>
-                    </Link>
-                </Typography>
-                <Typography variant="body1">
-                    <Date dateString={date} />
-                </Typography>
-                <Typography style={{ paddingTop: "1.1vmax" }} dangerouslySetInnerHTML={{ __html: firstFive }} />
-            </Grid>
-            <Grid item xs={12} sm={7}>
-                <CoverImage title={title} url={coverImage} slug={date} preview={true} />
-            </Grid>
-        </Grid>
+        <Card style={{ marginTop: "4%", marginBottom: "4%" }}>
+            <Link as={`/apods/${date}`} href="/apods/[slug]">
+                <CardActionArea>
+                    <CoverImage title={title} url={coverImage} slug={date} preview={true} />
+                    <CardContent>
+                        <Typography gutterBottom variant="h5" component="h2">
+                            {title}
+                        </Typography>
+                        <Typography variant="body2" color="textSecondary" component="p">
+                            {firstTwo}
+                        </Typography>
+                    </CardContent>
+                </CardActionArea>
+            </Link>
+            <CardActions>
+                <Link as={`/apods/${date}`} href="/apods/[slug]">
+                    <Button size="small" color="primary">
+                        Learn More
+        </Button>
+                </Link>
+            </CardActions>
+        </Card>
     )
 }
