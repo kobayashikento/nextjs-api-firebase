@@ -27,7 +27,7 @@ export default function MoreStories({ apods }) {
                     next={fetchMoreData}
                     hasMore={true}
                     loader={<Typography>Loading...</Typography>}
-                    style={{overflow: "none"}}
+                    style={{ overflow: "none" }}
                 >
                     {items.map((apod) => (
                         <ApodPreview
