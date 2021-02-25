@@ -12,7 +12,7 @@ export default function MoreStories({ apods }) {
     const [items, setItems] = React.useState(apods)
 
     async function fetchMoreData() {
-        const newApods = await getAllAPODForFeed(2);
+        const newApods = await getAllAPODForFeed(6);
         setItems(items.concat(newApods));
     }
 
