@@ -29,7 +29,7 @@ export default function HeroAPOD({
                     </Typography>
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                    <Typography variant="body1">{HERO_TEXT}</Typography>
+                    <Typography variant="body1">{explanation}</Typography>
                 </Grid>
             </Grid>
         </section >

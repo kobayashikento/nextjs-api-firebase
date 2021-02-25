@@ -10,7 +10,7 @@ export default function Footer() {
                     <Typography variant="h5">
                         Endless Feed Application using NASA's API
           </Typography>
-                    <Typography>
+                    <Typography className="underlineHover">
                         <a
                             href={`https://github.com/kobayashikento/nextjs-api-firebase`}
                         >
