@@ -26,7 +26,7 @@ export default function Alert() {
     return (
         <AppBar position="sticky" style={{
             display: "flex", justifyContent: "center", background: "rgba(234,234,234, 1)", height: "3.3vmax", alignItems: "center",
-            boxShadow: "rgba(0, 0, 0, 0.15) 0px 3px 3px 0px"
+            boxShadow: "rgba(0, 0, 0, 0.15) 0px 3px 3px 0px", zIndex: 100
         }}>
             <div style={{ display: "flex" }}>
                 <Link href="/">
